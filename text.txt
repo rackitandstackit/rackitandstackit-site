@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RackIt AnD StacklT LLC — Essentials Delivered</title>
+  <meta name="description" content="RackIt AnD StacklT LLC — Office supplies and equipment now, expanding to everyday essentials. Fast, reliable, and flexible." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #14b8a6;
+      --accent2: #f59e0b;
+      --border: #1f2937;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--text); }
+    header { background:rgba(15,23,42,0.85); padding:14px 20px; position:sticky; top:0; border-bottom:1px solid var(--border); backdrop-filter:saturate(180%) blur(8px); }
+    header h1 { margin:0; font-size:20px; color:var(--accent); letter-spacing:0.2px; }
+    nav a { margin-left:16px; color:var(--text); text-decoration:none; font-size:14px; opacity:0.9; }
+    nav a:hover { color:var(--accent); opacity:1; }
+    .container { max-width:1100px; margin:0 auto; padding:28px 20px; }
+    h2 { color:var(--text); font-size:34px; margin:0 0 8px; }
+    h3 { color:var(--accent2); font-size:22px; margin:28px 0 12px; }
+    p.muted { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; display:grid; gap:8px; }
+    .card h4 { margin:0; font-size:18px; }
+    .price { color:var(--accent2); font-weight:700; }
+    .btn { background:var(--accent); border:none; padding:8px 12px; border-radius:8px; cursor:pointer; color:#06223b; font-weight:700; }
+    .btn:hover { background:#0ea5e9; }
+    .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    form { display:grid; gap:8px; margin-top:6px; }
+    input, textarea, select { padding:10px; border-radius:8px; border:1px solid var(--border); background:#0b1221; color:var(--text); font-size:14px; }
+    input[type="submit"] { background:var(--accent); color:#06223b; font-weight:700; cursor:pointer; border:none; }
+    input[type="submit"]:hover { background:#0ea5e9; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { padding:8px; border-bottom:1px solid var(--border); text-align:left; }
+    footer { border-top:1px solid var(--border); margin-top:28px; padding:20px; text-align:center; color:var(--muted); }
+    small.note { color:var(--muted); }
+    @media (max-width:560px) { h2 { font-size:28px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <h1>RackIt & StackIt</h1>
+    <div>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#shipping">Payment & Shipping</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <h2>Essentials delivered — starting with office supplies.</h2>
+    <p class="muted"><strong>RackIt AnD StacklT LLC</strong> provides reliable office supplies and equipment today, and we’re expanding to everyday essentials. Fast, flexible, and built around your needs.</p>
+    <div class="row">
+      <a class="btn" href="#products">Browse products</a>
+      <a class="btn" href="#contact">Request a quote</a>
+    </div>
+  </section>
+
+  <section id="products">
+    <h3>Featured products</h3>
+    <div class="grid">
+
+      <!-- Product 1: Premium Copy Paper -->
+      <div class="card">
+        <h4>Premium Copy Paper</h4>
+        <p>500 sheets, 8.5x11</p>
+        <span class="price">$8.99</span>
+        <div class="row">
+          <button class="btn" onclick="addToQuote('Premium Copy Paper')">Add to quote</button>
+        </div>
+        <!-- PayPal Buy Now with quantity, shipping, tax -->
+        <!-- TODO: Replace business email with your actual PayPal Business email -->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="your-paypal-business-email@example.com">
+          <input type="hidden" name="item_name" value="Premium Copy Paper (500 sheets)">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="amount" value="8.99">
+          <input type="hidden" name="shipping" value="4.99">
+          <input type="hidden" name="tax_rate" value="10.25">
+          <label>Quantity</label>
+          <input type="number" name="quantity" value="1" min="1" style="width:80px;">
+          <input type="submit" value="Buy Now (PayPal)">
+          <small class="note">Shipping is flat-rate; CA tax applied if required.</small>
+        </form>
+      </div>
+
+      <!-- Product 2: HP 201A Black Toner -->
+      <div class="card">
+        <h4>HP 201A Black Toner</h4>
+        <p>High yield cartridge</p>
+        <span class="price">$74.95</span>
+        <div class="row">
+          <button class="btn" onclick="addToQuote('HP 201A Black Toner')">Add to quote</button>
+        </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="your-paypal-business-email@example.com">
+          <input type="hidden" name="item_name" value="HP 201A Black Toner">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="amount" value="74.95">
+          <input type="hidden" name="shipping" value="6.99">
+          <input type="hidden" name="tax_rate" value="10.25">
+          <label>Quantity</label>
+          <input type="number" name="quantity" value="1" min="1" style="width:80px;">
+          <input type="submit" value="Buy Now (PayPal)">
+          <small class="note">Ships standard; CA tax applied if required.</small>
+        </form>
+      </div>
+
+      <!-- Product 3: Ergonomic Mesh Chair -->
+      <div class="card">
+        <h4>Ergonomic Mesh Chair</h4>
+        <p>Adjustable, breathable</p>
+        <span class="price">$129.00</span>
+        <div class="row">
+          <button class="btn" onclick="addToQuote('Ergonomic Mesh Chair')">Add to quote</button>
+        </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="your-paypal-business-email@example.com">
+          <input type="hidden" name="item_name" value="Ergonomic Mesh Chair">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="amount" value="129.00">
+          <input type="hidden" name="shipping" value="19.99">
+          <input type="hidden" name="tax_rate" value="10.25">
+          <label>Quantity</label>
+          <input type="number" name="quantity" value="1" min="1" style="width:80px;">
+          <input type="submit" value="Buy Now (PayPal)">
+          <small class="note">Oversize shipping; CA tax applied if required.</small>
+        </form>
+      </div>
+
+      <!-- Product 4: Pilot G2 Gel Pens -->
+      <div class="card">
+        <h4>Pilot G2 Gel Pens</h4>
+        <p>12‑pack, black ink</p>
+        <span class="price">$14.50</span>
+        <div class="row">
+          <button class="btn" onclick="addToQuote('Pilot G2 Gel Pens (12-pack)')">Add to quote</button>
+        </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="your-paypal-business-email@example.com">
+          <input type="hidden" name="item_name" value="Pilot G2 Gel Pens (12-pack)">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="amount" value="14.50">
+          <input type="hidden" name="shipping" value="3.99">
+          <input type="hidden" name="tax_rate" value="10.25">
+          <label>Quantity</label>
+          <input type="number" name="quantity" value="1" min="1" style="width:80px;">
+          <input type="submit" value="Buy Now (PayPal)">
+          <small class="note">Standard shipping; CA tax applied if required.</small>
+        </form>
+      </div>
+
+      <!-- Product 5: Heavy‑Duty Shelves -->
+      <div class="card">
+        <h4>Heavy‑Duty Shelves</h4>
+        <p>Steel frame, 5 tiers</p>
+        <span class="price">$199.00</span>
+        <div class="row">
+          <button class="btn" onclick="addToQuote('Heavy-Duty Shelves')">Add to quote</button>
+        </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="your-paypal-business-email@example.com">
+          <input type="hidden" name="item_name" value="Heavy-Duty Shelves">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="amount" value="199.00">
+          <input type="hidden" name="shipping" value="29.99">
+          <input type="hidden" name="tax_rate" value="10.25">
+          <label>Quantity</label>
+          <input type="number" name="quantity" value="1" min="1" style="width:80px;">
+          <input type="submit" value="Buy Now (PayPal)">
+          <small class="note">Freight-like shipping; CA tax applied if required.</small>
+        </form>
+      </div>
+
+      <!-- Product 6: General Essentials (Coming Soon) -->
+      <div class="card">
+        <h4>Coming Soon</h4>
+        <p>General essentials</p>
+        <span class="price">Ask for pricing</span>
+        <div class="row">
+          <button class="btn" onclick="addToQuote('General Essentials - Coming Soon')">Add to quote</button>
+          <!-- Optional Stripe Payment Link example (replace URL if you enable) -->
+          <!-- <a href="https://buy.stripe.com/your_link_here" target="_blank" class="btn">Buy Now (Card)</a> -->
+        </div>
+      </div>
+
+    </div>
+
+    <h3>Your quote cart</h3>
+    <p class="muted">Review items for bulk orders or special requests, adjust quantities, estimate shipping & tax, then save/print or submit a quote.</p>
+    <table id="quoteTable" style="margin-bottom:12px;">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="quoteBody"></tbody>
+    </table>
+
+    <div style="margin:12px 0;">
+      <label>Shipping ($): <input type="number" id="shippingEstimate" value="0" step="0.01" style="width:100px;"></label>
+      <label style="margin-left:12px;">Tax Rate (%): <input type="number" id="taxRate" value="10.25" step="0.01" style="width:80px;"></label>
+    </div>
+
+    <p><strong>Subtotal: $<span id="quoteSubtotal">0.00</span></strong></p>
+    <p><strong>Estimated Tax: $<span id="quoteTax">0.00</span></strong></p>
+    <p><strong>Shipping: $<span id="quoteShip">0.00</span></strong></p>
+    <p><strong>Estimated Total: $<span id="quoteTotal">0.00</span></strong></p>
+
+    <div class="row">
+      <button class="btn" onclick="sendQuote()">Submit quote request</button>
+      <button class="btn" onclick="clearQuote()">Clear</button>
+      <button class="btn" onclick="printQuote()">Save/Print Quote</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <h3>About us</h3>
+    <p><strong>RackIt AnD StacklT LLC</strong> is a Southern California supplier focused on office supplies and equipment, with a mission to expand into everyday essentials. Reliability, fast service, and flexible sourcing are our core promises.</p>
+  </section>
+
+  <section id="shipping">
+    <h3>Payment and shipping</h3>
+    <ul>
+      <li><strong>Payments:</strong> PayPal “Buy Now,” cards via Stripe links, or invoice (Net 15/30 for approved customers)</li>
+      <li><strong>Local delivery:</strong> Greater Los Angeles and Orange County</li>
+      <li><strong>Shipping:</strong> UPS/USPS nationwide; quoted at checkout or in your quote</li>
+      <li><strong>Returns:</strong> 30 days on unopened items; equipment per manufacturer warranty</li>
+    </ul>
+    <p class="muted">Note: Confirm PayPal Business settings so receipts show RackIt AnD StacklT LLC.</p>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p><strong>RackIt AnD StacklT LLC</strong><br>
+    Email: hello@rackitandstackit.com<br>
+    Phone: (XXX) XXX‑XXXX<br>
+    Southern California</p>
+
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="How can we help?" required></textarea>
+      <button type="submit" class="btn">Send message</button>
+    </form>
+    <p class="muted">We typically reply within 1 business day.</p>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> RackIt AnD StacklT LLC. All rights reserved.
+</footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Product prices map (used for quote cart totals)
+  const productPrices = {
+    "Premium Copy Paper": 8.99,
+    "HP 201A Black Toner": 74.95,
+    "Ergonomic Mesh Chair": 129.00,
+    "Pilot G2 Gel Pens (12-pack)": 14.50,
+    "Heavy-Duty Shelves": 199.00,
+    "General Essentials - Coming Soon": 0
+  };
+
+  // Quote cart with quantities and totals
+  const quote = [];
+
+  function addToQuote(item) {
+    const existing = quote.find(q => q.name === item);
+    if (existing) {
+      existing.qty++;
+    } else {
+      quote.push({ name: item, qty: 1, price: productPrices[item] || 0 });
+    }
+    renderQuote();
+  }
+
+  function updateQty(index, newQty) {
+    quote[index].qty = Math.max(1, parseInt(newQty) || 1);
+    renderQuote();
+  }
+
+  function removeItem(index) {
+    quote.splice(index, 1);
+    renderQuote();
+  }
+
+  function clearQuote() {
+    quote.length = 0;
+    renderQuote();
+  }
+
+  function renderQuote() {
+    const body = document.getElementById('quoteBody');
+    const subtotalEl = document.getElementById('quoteSubtotal');
+    const taxEl = document.getElementById('quoteTax');
+    const shipEl = document.getElementById('quoteShip');
+    const totalEl = document.getElementById('quoteTotal');
+
+    body.innerHTML = '';
+    let subtotal = 0;
+
+    quote.forEach((item, i) => {
+      const rowSubtotal = item.qty * item.price;
+      subtotal += rowSubtotal;
+      body.innerHTML += `
+        <tr>
+          <td>${item.name}</td>
+          <td><input type="number" min="1" value="${item.qty}" style="width:60px;" onchange="updateQty(${i}, this.value)"></td>
+          <td>$${item.price.toFixed(2)}</td>
+          <td>$${rowSubtotal.toFixed(2)}</td>
+          <td><button class="btn" onclick="removeItem(${i})">Remove</button></td>
+        </tr>
+      `;
+    });
+
+    const shipping = parseFloat(document.getElementById('shippingEstimate').value) || 0;
+    const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+    const tax = subtotal * (taxRate / 100);
+    const total = subtotal + tax + shipping;
+
+    subtotalEl.textContent = subtotal.toFixed(2);
+    taxEl.textContent = tax.toFixed(2);
+    shipEl.textContent = shipping.toFixed(2);
+    totalEl.textContent = total.toFixed(2);
+  }
+
+  function sendQuote() {
+    const subtotal = document.getElementById('quoteSubtotal').textContent;
+    const tax = document.getElementById('quoteTax').textContent;
+    const shipping = document.getElementById('quoteShip').textContent;
+    const total = document.getElementById('quoteTotal').textContent;
+
+    let bodyText = "Items:\n";
+    quote.forEach(item => {
+      bodyText += `- ${item.name} x${item.qty} = $${(item.qty * item.price).toFixed(2)}\n`;
+    });
+    bodyText += `\nSubtotal: $${subtotal}\nTax: $${tax}\nShipping: $${shipping}\nEstimated Total: $${total}`;
+
+    const subject = encodeURIComponent('Quote Request — RackIt AnD StacklT LLC');
+    const body = encodeURIComponent(bodyText + "\n\nPlease reply with final pricing and availability.");
+    window.location.href = `mailto:hello@rackitandstackit.com?subject=${subject}&body=${body}`;
+  }
+
+  // Save/Print Quote (with logo and tagline)
+  function printQuote() {
+    const subtotal = document.getElementById('quoteSubtotal').textContent;
+    const tax = document.getElementById('quoteTax').textContent;
+    const shipping = document.getElementById('quoteShip').textContent;
+    const total = document.getElementById('quoteTotal').textContent;
+
+    // Hosted logo URL
+    const logoUrl = "https://copilot.microsoft.com/th/id/BCO.4f0cb073-3515-4818-aa5b-985217153807.png";
+
+    let content = `
+      <div style="text-align:center; margin-bottom:20px;">
+        <img src="${logoUrl}" alt="RackIt AnD StacklT LLC Logo" style="max-height:80px;"><br>
+        <h2 style="margin:8px 0;">RackIt AnD StacklT LLC — Quote Summary</h2>
+        <p style="font-weight:bold; letter-spacing:1px; margin-top:4px;">MAKE YOUR SPACE WORK</p>
+      </div>
+      <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; width:100%;">
+        <tr><th>Item</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr>
+    `;
+
+    quote.forEach(item => {
+      content += `<tr>
+        <td>${item.name}</td>
+        <td>${item.qty}</td>
+        <td>$${item.price.toFixed(2)}</td>
+        <td>$${(item.qty * item.price).toFixed(2)}</td>
+      </tr>`;
+    });
+
+    content += `</table>
+      <p><strong>Subtotal:</strong> $${subtotal}</p>
+      <p><strong>Estimated Tax:</strong> $${tax}</p>
+      <p><strong>Shipping:</strong> $${shipping}</p>
+      <p><strong>Estimated Total:</strong> $${total}</p>
+      <p><em>Generated by RackIt AnD StacklT LLC website</em></p>
+    `;
+
+    const w = window.open('', '', 'width=800,height=600');
+    w.document.write(content);
+    w.document.close();
+    w.print();
+  }
+
+  // Recalculate totals when shipping/tax inputs change
+  document.addEventListener('input', (e) => {
+    if (e.target.id === 'shippingEstimate' || e.target.id === 'taxRate') {
+      renderQuote();
+    }
+  });
+
+  // Contact form (mailto)
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const subject = encodeURIComponent('New Inquiry — RackIt AnD StacklT LLC');
+    const body = encodeURIComponent(
+      `Name: ${fd.get('name')}\nEmail: ${fd.get('email')}\n\nMessage:\n${fd.get('message')}`
+    );
+    window.location.href = `mailto:hello@rackitandstackit.com?subject=${subject}&body=${body}`;
+    e.target.reset();
+  });
+</script>
+
+</body>
+</html>
